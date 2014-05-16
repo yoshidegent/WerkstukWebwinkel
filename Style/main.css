@@ -1,0 +1,106 @@
+body
+{
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
+h1
+{
+    margin: 50px;
+    font-size: 75px;
+    color: rgb(0, 0, 50);
+}
+
+#pageHeader
+{
+    text-align: center;
+}
+
+#pageContent
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+
+}
+
+#productenTable
+{
+    width: 100%
+}
+#productenTable tr td, #productenTable tr th
+{
+    border-color: rgb(0, 0, 50);
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+}
+
+#productenTable tr th
+{
+    background-color: rgb(0, 0, 50);
+    color: white;
+}
+
+#prijsInclBtw, #prijsExclBtw
+{
+    text-align: right;
+}
+
+#Detaillink
+{
+    text-align: center;
+}
+
+#productImage
+{
+    height: 225px;
+    width: 25%;
+    text-align: center;
+    border-color: rgb(0, 0, 50);
+    border-width: 2px;
+    border-style: solid;
+}
+
+#productImage figure img
+{
+    height: 100%;
+}
+
+#productInfoTable
+{
+    width: 100%;
+}
+
+#productInfoTable section
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+#productValues
+{
+    position: relative;
+    background-color: rgb(0, 0, 50);
+    color: white;
+}
+
+#pageFooter
+{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#productValues div
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 30px;
+}
+
+#productBeschrijving
+{
+    padding-top: 30px;
+}
