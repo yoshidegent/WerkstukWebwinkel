@@ -28,7 +28,7 @@
     ?>
     <article id="pageContent">
         <header>
-            <h1 style="margin-left:0px; font-size:50px;"><a style="text-decoration:none;" href="index.php">< <?php echo "$product->naam"; ?></a></h1>
+            <h1 style="margin-left:0px; font-size:50px;"><a href="index.php">< <?php echo "$product->naam"; ?></a></h1>
         </header>
         <article>
             <table id="productInfoTable">
@@ -71,9 +71,6 @@
                 </tr>
             </table>
         </article>
-        <?php
-        require_once 'pageFooter.php';
-        ?>
     </article>
 </section>
 </body>

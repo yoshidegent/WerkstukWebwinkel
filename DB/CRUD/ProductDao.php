@@ -30,56 +30,27 @@ class ProductDao
         return new Product($databaseRij['product_id'], $databaseRij['product_naam'], $databaseRij['prijs_excl_btw'], $databaseRij['img_url'], $databaseRij['beschrijving']);
     }
 
-    /*
-    public static function getByTitel($titel)
+    public static function update($product)
     {
-        $resultaat = self::getVerbinding()->voerSqlQueryUit("SELECT * FROM boeken WHERE titel='?'", array($titel));
-        $resultatenArray = array();
+        return self::getVerbinding()->voerSqlQueryUit
+            ("UPDATE producten SET product_naam=?, prijs_excl_btw=?, img_url=?, beschrijving=? WHERE product_id=?",
+                array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving, $product->id));
+    }  (z5&"q²é")
 
-        for ($index = 0; $index < $resultaat->num_rows; $index++)
-        {
-            $databaseRij = $resultaat->fetch_array();
-            $nieuw = self::converteerRijNaarObject($databaseRij);
-            $resultatenArray[$index] = $nieuw;
-        }
-
-        return $resultatenArray;
+    public static function insert($product)
+    {
+        return self::getVerbinding()->voerSqlQueryUit
+            ("INSERT INTO producten(product_naam, prijs_excl_btw, img_url, beschrijving) VALUES(?, ?, ?, ?)",
+                array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving);
     }
 
-    public static function getById($id)
+    public static function deleteById($productId)
     {
-        $resultaat = self::getVerbinding()->voerSqlQueryUit("SELECT * FROM boeken WHERE boekId=?", array($id));
-        if ($resultaat->num_rows == 1)
-        {
-            $databaseRij = $resultaat->fetch_array();
-            return self::converteerRijNaarObject($databaseRij);
-        }
-        else
-        {
-            //Er is waarschijnlijk iets mis gegaan
-            return false;
-        }
+        return self::getVerbinding()->voerSqlQueryUit("Delete producten WHERE product_id=?", array($productId));
     }
 
-    public static function insert($boek)
+    public static function delete($product)
     {
-        return self::getVerbinding()->voerSqlQueryUit("INSERT INTO boeken(titel, uitgavedatum, prijs_excl_btw, email_uitgeverij) VALUES ('?','?',?,'?')", array($boek->titel, $boek->uitgavedatum, $boek->prijsExclBtw, $boek->emailUitgeverij));
+        return self::deleteById($product->id);
     }
-
-    public static function deleteById($id)
-    {
-        return self::getVerbinding()->voerSqlQueryUit("DELETE FROM boeken where boekId=?", array($id));
-    }
-
-    public static function delete($boek)
-    {
-        return self::deleteById($boek->boekId);
-    }
-
-    public static function update($boek)
-    {
-        return self::getVerbinding()->voerSqlQueryUit("UPDATE boeken SET titel='?',uitgavedatum='?', prijs_excl_btw='?', email_uitgeverij='?' WHERE boekId=?", array($boek->titel, $boek->uitgavedatum, $boek->prijsExclBtw, $boek->emailUitgeverij, $boek->boekId));
-    }
-    */
-
 }

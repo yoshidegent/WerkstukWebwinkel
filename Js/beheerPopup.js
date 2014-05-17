@@ -1,38 +1,23 @@
-function deselect()
+$(document).ready(function()
 {
-    $(".pop").slideFadeToggle(function()
-    {
-        $("#beheerBtn").removeClass("selected");
-    });
-}
+    $("#beheerPopup").hide();
 
-$(function()
-{
-    $("#beheerBtn").live('click', function()
+    $("#beheerBtn").click(function()
     {
-        if($(this).hasClass("selected"))
-        {
-            deselect();
-        }
-        else
-        {
-            $(this).addClass("selected");
-            $(".pop").slideFadeToggle(function()
-            {
-                $("#naamInput").focus();
-            });
-        }
-        return false;
-    });
-
-    $(".close").live('click', function()
-    {
-        deselect();
-        return false;
+        $("#beheerBtn").fadeOut();
+        $("#beheerPopup").fadeIn();
     });
 });
 
-$.fn.slideFadeToggle = function(easing, callback)
+$(document).mouseup(function (e)
 {
-    return this.animate({ opacity: 'toggle', height: 'toggle' }, "fast", easing, callback);
-};​ 
+    //Select the container that is active
+    var container = $("#naamForm");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $("#beheerBtn").fadeIn();
+        $("#beheerPopup").fadeOut();
+    }
+});

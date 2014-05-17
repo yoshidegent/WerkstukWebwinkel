@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" lang="en_US" xml:lang="en_US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="en" />
@@ -13,15 +13,26 @@
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="Js/beheerPopup.js" type="text/javascript"></script>
 </head>
 <body>
+        <div>
+            <div id="beheerPopup">
+                <form id="naamForm" method="post" action="beheer.php">
+                    <p><label id="naamLbl" for="naam">Wat is jouw naam?<br><br>Vul in als volgt: "Voornaam Achternaam"</label></p>
+                    <p><input id="naamInput" type="text" name="naam"></p>
+                    <p><input id="naamSubmit" type="submit" value="Verzend"></p>
+                </form>
+            </div>
+            <input type="button" id="beheerBtn" value="Beheer">
+        </div>
         <section>
             <?php
                 require_once 'pageHeader.php';
             ?>
             <article id="pageContent">
                 <header>
-                    <h1>Home</h1>
+                    <h1 style="font-size:75px; margin-left:50px;">Home</h1>
                 </header>
                 <article>
                     <table id="productenTable" class="table">
@@ -73,9 +84,6 @@
                         </tbody>
                     </table>
                 </article>
-                <?php
-                require_once 'pageFooter.php';
-                ?>
             </article>
         </section>
 </body>
