@@ -4,7 +4,11 @@
 
     $unserialized = unserialize($_GET['product']);
 
-    var_dump($_GET['product']);
+    if(!$unserialized)
+    {
+        header("Location: index.php");
+        exit;
+    }
 
     $product = new Product($unserialized->id, $unserialized->naam, $unserialized->prijsExclBtw, $unserialized->imgUrl, $unserialized->beschrijving);
 
