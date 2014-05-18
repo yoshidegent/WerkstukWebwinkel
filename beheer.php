@@ -54,7 +54,7 @@ elseif(isset($_POST['voegToeSubmit']))
 </head>
 <body>
 
-<a href="index.php" id="afmeldBtn" class="popupBtn">Afmelden</a>
+<a href="index.php" id="afmeldBtn">Afmelden</a>
 
 <div class="popup" id="voegToePopup">
     <form id="popupForm" class="popupForm">
@@ -128,8 +128,8 @@ elseif(isset($_POST['voegToeSubmit']))
                                                 <form action="beheer.php" method="post">
                                                     <input type="hidden" name="naam" value="<?php echo $admin ?>" />
                                                     <input type="hidden" name="product" value="<?php echo htmlspecialchars($serialized, ENT_QUOTES); ?>" />
-                                                    <input type="submit" value="Pas aan" name="pasAanSubmit" class="popupBtn" <?php if(!$isAdmin){echo "disabled";}?>"/>
-                                                    <input type="submit" value="Verwijder" name="verwijderSubmit" <?php if(!$isAdmin){echo "disabled";}?>"/>
+                                                    <input type="submit" id="pasAanBtn" value="Pas aan" name="pasAanSubmit" class="popupBtn" <?php if(!$isAdmin){echo "disabled";}?>/>
+                                                    <input type="submit" id="verwijderBtn" value="Verwijder" name="verwijderSubmit" <?php if(!$isAdmin){echo "disabled";}?>/>
                                                 </form>
                                             </td>
                                     </tr>
@@ -144,7 +144,7 @@ elseif(isset($_POST['voegToeSubmit']))
                 </tbody>
             </table>
             <form action="beheer.php" method="post" style="text-align:right; padding:5%; padding-top:20px;">
-                <input id="voegProductToeBtn" type="button" value="Voeg een product toe" name="voegToeSubmit" class="popupBtn" style="cursor:pointer;" <?php if(!$isAdmin){echo "disabled";}?>/>
+                <input id="voegProductToeBtn" type="button" value="Voeg een product toe" name="voegToeSubmit" class="popupBtn" style="cursor:pointer;" />
             </form>
             <?php
             function pasAan($product)
@@ -156,7 +156,6 @@ elseif(isset($_POST['voegToeSubmit']))
             <?php
             function verwijder($id)
             {
-                echo "testVERWIJDER";
                 ProductDao::deleteById($id);
                 //Header('Location: '.$_SERVER['PHP_SELF']);
                 //Exit();
