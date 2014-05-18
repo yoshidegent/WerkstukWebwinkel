@@ -1,15 +1,38 @@
 <?php
-
 require_once 'DB/CRUD/AdminDao.php';
-$admin = $_POST["naam"];
+require_once 'DB/CRUD/ProductDao.php';
+require_once 'DataModels/Product.php';
 
-var_dump($admin);
-
+$admin = $_POST['naam'];
+$isAdmin;
 if(!AdminDao::isAdmin($admin))
 {
-    echo "<script type='text/javascript'>alert('You are not an admin!');</script>";
-    //header("Location: index.php");
-    //exit;
+    $isAdmin = false;
+}
+else
+{
+    $isAdmin = true;
+}
+
+$product;
+if(isset($_POST['product']))
+{
+    $unserialized = unserialize($_POST['product']);
+    $product = new Product($unserialized->id, $unserialized->naam, $unserialized->prijsExclBtw, $unserialized->imgUrl, $unserialized->beschrijving);
+}
+
+if(isset($_POST['verwijderSubmit']))
+{
+    $productId = $product->id;
+    verwijder($productId);
+}
+elseif(isset($_POST['pasAanSubmit']))
+{
+    pasAan($product);
+}
+elseif(isset($_POST['voegToeSubmit']))
+{
+    voegToe();
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -27,17 +50,45 @@ if(!AdminDao::isAdmin($admin))
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="Js/beheerPopup.js" type="text/javascript"></script>
+    <script src="Js/popup.js" type="text/javascript"></script>
 </head>
 <body>
-<a href="index.php" id="afmeldBtn">Afmelden</a>
+
+<a href="index.php" id="afmeldBtn" class="popupBtn">Afmelden</a>
+
+<div class="popup" id="voegToePopup">
+    <form id="popupForm" class="popupForm">
+        <input type="hidden" name="naam" value="<?php echo $admin ?>" />
+        <table>
+            <tr>
+                <td><label for="productnaamInput">Productnaam: </label></td>
+                <td><input id="productnaamInput" type="text" name="productnaam" /></td>
+            </tr>
+            <tr>
+                <td><label for="prijsExclBtwInput">Prijs zonder BTW: </label></td>
+                <td><input id="prijsExclBtwInput" type="text" name="prijsExclBtw" /></td>
+            </tr>
+            <tr>
+                <td><label for="imgUrlInput">Afbeelding URL: </label></td>
+                <td><input id="imgUrlInput" type="text" name="imgUrl" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label id="beschrijvingLbl" for="beschrijvingTA">Beschrijving: </label><br><textarea id="beschrijvingTA" type="text" name="beschrijving"></textarea></td>
+            </tr>
+        </table>
+        <input id="opslaanBtn" type="button" value="Opslaan">
+    </form>
+
+</div>
+
+
 <section>
     <?php
     require_once 'pageHeader.php';
     ?>
     <article id="pageContent">
         <header>
-            <h1>Welkom <?php echo $admin ?>, u bent een admin.</h1>
+            <h1>Welkom <?php echo $admin ?>, u bent <?php if(!$isAdmin){echo "g";}?>een admin.</h1>
         </header>
         <article>
             <table id="productenTable" class="table">
@@ -74,13 +125,11 @@ if(!AdminDao::isAdmin($admin))
                                             <td id="prijsExclBtw" class="td-nya"><?php echo "$prijsExclBtw"; ?> EUR</td>
                                             <td id="prijsInclBtw" class="td-nya"><?php echo "$prijsInclBtw"; ?> EUR</td>
                                             <td class="td-nya adminOperatie">
-                                                <form action="detail.php" method="get">
+                                                <form action="beheer.php" method="post">
+                                                    <input type="hidden" name="naam" value="<?php echo $admin ?>" />
                                                     <input type="hidden" name="product" value="<?php echo htmlspecialchars($serialized, ENT_QUOTES); ?>" />
-                                                    <input type="submit" value="Pas aan" />
-                                                </form>
-                                                <form action="detail.php" method="get">
-                                                    <input type="hidden" name="product" value="<?php echo htmlspecialchars($serialized, ENT_QUOTES); ?>" />
-                                                    <input type="submit" value="Verwijder" />
+                                                    <input type="submit" value="Pas aan" name="pasAanSubmit" class="popupBtn" <?php if(!$isAdmin){echo "disabled";}?>"/>
+                                                    <input type="submit" value="Verwijder" name="verwijderSubmit" <?php if(!$isAdmin){echo "disabled";}?>"/>
                                                 </form>
                                             </td>
                                     </tr>
@@ -94,9 +143,31 @@ if(!AdminDao::isAdmin($admin))
                 </tr>
                 </tbody>
             </table>
-            <form action="bewerk.php" style="text-align:right; padding:5%; padding-top:20px;">
-                <input id="voegProductToeBtn" type="submit" value="Voeg een product toe" />
+            <form action="beheer.php" method="post" style="text-align:right; padding:5%; padding-top:20px;">
+                <input id="voegProductToeBtn" type="button" value="Voeg een product toe" name="voegToeSubmit" class="popupBtn" style="cursor:pointer;" <?php if(!$isAdmin){echo "disabled";}?>/>
             </form>
+            <?php
+            function pasAan($product)
+            {
+                echo "testPASAAN";
+            }
+            ?>
+
+            <?php
+            function verwijder($id)
+            {
+                echo "testVERWIJDER";
+                ProductDao::deleteById($id);
+                //Header('Location: '.$_SERVER['PHP_SELF']);
+                //Exit();
+            }
+            ?>
+
+            <?php
+            function voegToe()
+            {
+            }
+            ?>
         </article>
     </article>
 </section>

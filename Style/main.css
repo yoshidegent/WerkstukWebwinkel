@@ -1,4 +1,4 @@
-#beheerBtn, #naamSubmit, #afmeldBtn
+#beheerBtn, #naamSubmit, #afmeldBtn, #opslaanBtn
 {
     font-size: 20px;
     padding: 20px;
@@ -13,7 +13,7 @@
 }
 #beheerBtn:hover, #naamSubmit:hover{cursor: pointer;}
 #beheerBtn, #afmeldBtn{top:20px;}
-#naamSubmit{bottom: 10px;}
+#naamSubmit{bottom: -100px;}
 
 #voegProductToeBtn
 {
@@ -23,7 +23,7 @@
     border: 2px solid lawngreen;
 }
 
-#beheerPopup
+.popup
 {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -31,7 +31,7 @@
     height: 100%;
 }
 
-#beheerPopup form
+.popup form
 {
     height: 400px;
     margin-top: -200px;
@@ -45,14 +45,41 @@
     top: 50%;
 }
 
-#beheerPopup form p
+#voegToePopup form
+{
+    height: 500px;
+    margin-top: -250px;
+}
+
+.popup form table
+{
+    width: 100%;
+}
+
+.popup form table tr td
+{
+    width: 50%;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.popup form table input
+{
+    position: relative;
+    left: -40px;
+}
+
+.popup form p
 {
     margin: 60px;
     margin-left: 90px;
     font-size: 23px;
 }
+#beschrijvingTA, #beschrijvingLbl{position:relative;}
+#beschrijvingLbl{top:-30px;}
+.popup textarea{width:500px; font-size:14px; height:100px; top:-20px;}
 
-#beheerPopup form #naamInput
+.popup form input
 {
     font-size: 25px;
     padding: 10px;

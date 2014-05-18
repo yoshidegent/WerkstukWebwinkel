@@ -8,13 +8,26 @@ class AdminDao
         return DatabaseFactory::getDatabase();
     }
 
+    public static function getAll()
+    {
+        $resultaat = self::getVerbinding()->voerSqlQueryUit("SELECT adminnaam FROM admins");
+        $resultatenArray = array();
+
+        for ($index = 0; $index < $resultaat->num_rows; $index++)
+        {
+            $resultatenArray[$index] = $resultaat->fetch_array();
+        }
+
+        return $resultatenArray;
+    }
+
     public static function isAdmin($admin)
     {
-        $resultaten = self::getVerbinding()->voerSqlQueryUit("SELECT admin_naam FROM admins");
-        $resultaten = $resultaten->fetch_array();
+        $resultaten = self::getAll();
+
         foreach($resultaten as $element)
         {
-            if($element == $admin)
+            if($element['adminnaam'] == $admin)
             {
                 return true;
             }

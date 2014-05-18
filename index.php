@@ -13,18 +13,18 @@
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="Js/beheerPopup.js" type="text/javascript"></script>
+    <script src="Js/popup.js" type="text/javascript"></script>
 </head>
 <body>
         <div>
-            <div id="beheerPopup">
-                <form id="naamForm" method="post" action="beheer.php">
+            <div id="beheerPopup" class="popup">
+                <form id="popupForm" class=".popupForm" method="post" action="beheer.php">
                     <p><label id="naamLbl" for="naam">Wat is jouw naam?<br><br>Vul in als volgt: "Voornaam Achternaam"</label></p>
                     <p><input id="naamInput" type="text" name="naam"></p>
                     <p><input id="naamSubmit" type="submit" value="Verzend"></p>
                 </form>
             </div>
-            <input type="button" id="beheerBtn" value="Beheer">
+            <input type="button" class="popupBtn" id="beheerBtn" value="Beheer">
         </div>
         <section>
             <?php

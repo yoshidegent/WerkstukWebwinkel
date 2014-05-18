@@ -35,18 +35,18 @@ class ProductDao
         return self::getVerbinding()->voerSqlQueryUit
             ("UPDATE producten SET product_naam=?, prijs_excl_btw=?, img_url=?, beschrijving=? WHERE product_id=?",
                 array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving, $product->id));
-    }  (z5&"q²é")
+    }
 
     public static function insert($product)
     {
         return self::getVerbinding()->voerSqlQueryUit
             ("INSERT INTO producten(product_naam, prijs_excl_btw, img_url, beschrijving) VALUES(?, ?, ?, ?)",
-                array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving);
+                array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving));
     }
 
     public static function deleteById($productId)
     {
-        return self::getVerbinding()->voerSqlQueryUit("Delete producten WHERE product_id=?", array($productId));
+        return self::getVerbinding()->voerSqlQueryUit("Delete FROM producten WHERE product_id=?", array($productId));
     }
 
     public static function delete($product)
