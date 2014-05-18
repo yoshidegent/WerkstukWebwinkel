@@ -39,9 +39,10 @@ class ProductDao
 
     public static function insert($product)
     {
-        return self::getVerbinding()->voerSqlQueryUit
-            ("INSERT INTO producten(product_naam, prijs_excl_btw, img_url, beschrijving) VALUES(?, ?, ?, ?)",
-                array($product->naam, $product->prijsExclBtw, $product->imgUrl, $product->beschrijving));
+        $resultaat = self::getVerbinding()->voerSqlQueryUit
+            ("INSERT INTO producten (product_naam, prijs_excl_btw, img_url, beschrijving) VALUES ('?', ?, '?', '?')",
+                array($product->naam, (float)$product->prijsExclBtw, $product->imgUrl, $product->beschrijving));
+        return $resultaat;
     }
 
     public static function deleteById($productId)

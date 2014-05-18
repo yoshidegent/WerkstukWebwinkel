@@ -14,25 +14,20 @@ else
     $isAdmin = true;
 }
 
-$product;
-if(isset($_POST['product']))
-{
-    $unserialized = unserialize($_POST['product']);
-    $product = new Product($unserialized->id, $unserialized->naam, $unserialized->prijsExclBtw, $unserialized->imgUrl, $unserialized->beschrijving);
-}
-
 if(isset($_POST['verwijderSubmit']))
 {
-    $productId = $product->id;
+    $productId = $_POST['productId'];
     verwijder($productId);
 }
-elseif(isset($_POST['pasAanSubmit']))
+elseif(isset($_POST['opslaanSubmit']))
 {
-    pasAan($product);
-}
-elseif(isset($_POST['voegToeSubmit']))
-{
-    voegToe();
+    $productnaam = $_POST['productnaam'];
+    $prijsExclBtw = $_POST['prijsExclBtw'];
+    $imgUrl = $_POST['imgUrl'];
+    $beschrijving = $_POST['beschrijving'];
+
+    $product = new Product("", $productnaam, $prijsExclBtw, $imgUrl, $beschrijving);
+    voegToe($product);
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -57,7 +52,7 @@ elseif(isset($_POST['voegToeSubmit']))
 <a href="index.php" id="afmeldBtn">Afmelden</a>
 
 <div class="popup" id="voegToePopup">
-    <form id="popupForm" class="popupForm">
+    <form id="popupForm" class="popupForm" action="beheer.php" method="post">
         <input type="hidden" name="naam" value="<?php echo $admin ?>" />
         <table>
             <tr>
@@ -76,7 +71,7 @@ elseif(isset($_POST['voegToeSubmit']))
                 <td colspan="2"><label id="beschrijvingLbl" for="beschrijvingTA">Beschrijving: </label><br><textarea id="beschrijvingTA" type="text" name="beschrijving"></textarea></td>
             </tr>
         </table>
-        <input id="opslaanBtn" type="button" value="Opslaan">
+        <input id="opslaanBtn" type="submit" value="Opslaan" name="opslaanSubmit"/>
     </form>
 
 </div>
@@ -127,8 +122,7 @@ elseif(isset($_POST['voegToeSubmit']))
                                             <td class="td-nya adminOperatie">
                                                 <form action="beheer.php" method="post">
                                                     <input type="hidden" name="naam" value="<?php echo $admin ?>" />
-                                                    <input type="hidden" name="product" value="<?php echo htmlspecialchars($serialized, ENT_QUOTES); ?>" />
-                                                    <input type="submit" id="pasAanBtn" value="Pas aan" name="pasAanSubmit" class="popupBtn" <?php if(!$isAdmin){echo "disabled";}?>/>
+                                                    <input type="hidden" name="productId" value="<?php echo $element->id ?>" />
                                                     <input type="submit" id="verwijderBtn" value="Verwijder" name="verwijderSubmit" <?php if(!$isAdmin){echo "disabled";}?>/>
                                                 </form>
                                             </td>
@@ -143,28 +137,21 @@ elseif(isset($_POST['voegToeSubmit']))
                 </tr>
                 </tbody>
             </table>
-            <form action="beheer.php" method="post" style="text-align:right; padding:5%; padding-top:20px;">
-                <input id="voegProductToeBtn" type="button" value="Voeg een product toe" name="voegToeSubmit" class="popupBtn" style="cursor:pointer;" />
+            <form style="text-align:right; padding:5%; padding-top:20px;">
+                <input id="voegProductToeBtn" type="button" value="Voeg een product toe" name="voegToeSubmit" class="popupBtn" style="cursor:pointer;"/>
             </form>
-            <?php
-            function pasAan($product)
-            {
-                echo "testPASAAN";
-            }
-            ?>
 
             <?php
             function verwijder($id)
             {
                 ProductDao::deleteById($id);
-                //Header('Location: '.$_SERVER['PHP_SELF']);
-                //Exit();
             }
             ?>
 
             <?php
-            function voegToe()
+            function voegToe($p)
             {
+                productDao::insert($p);
             }
             ?>
         </article>

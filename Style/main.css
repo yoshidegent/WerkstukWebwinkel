@@ -11,7 +11,7 @@
     position: absolute;
     right: 30px;
 }
-#beheerBtn:hover, #naamSubmit:hover{cursor: pointer;}
+#beheerBtn:hover, #naamSubmit:hover, #opslaanBtn:hover {cursor: pointer;}
 #beheerBtn, #afmeldBtn{top:20px;}
 #naamSubmit{bottom: -100px;}
 
