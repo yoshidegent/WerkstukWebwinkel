@@ -32,6 +32,7 @@ class Database {
     protected function verbreekVerbindingMetDatabase() {
         if ($this->mijnVerbinding != null) {
             $this->mijnVerbinding->close();
+			$this->mijnVerbinding = null;
         }
     }
 

@@ -27,6 +27,7 @@
             <input type="button" class="popupBtn" id="beheerBtn" value="Beheer">
         </div>
         <section>
+            <a href="begeleidendDocument.pdf">Download het gevraagde bij te leveren begeleidend document</a>
             <?php
                 require_once 'pageHeader.php';
             ?>
