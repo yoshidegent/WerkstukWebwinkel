@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cdfe8af-49bd-45d1-b9c9-606e7fd7b01c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/begeleidendDocument.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/begeleidendDocument.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/Connection/Database.php" afterPath="$PROJECT_DIR$/DB/Connection/Database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beheer.php" afterPath="$PROJECT_DIR$/beheer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Style/main.css" afterPath="$PROJECT_DIR$/Style/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WerkstukWebwinkel.iws" />
@@ -29,19 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="52" selection-start="4741" selection-end="4741" vertical-scroll-proportion="0.73907286" vertical-offset="785" max-vertical-offset="1632">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseFactory.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB/Connection/DatabaseFactory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="2" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="476">
+            <state line="79" column="52" selection-start="4741" selection-end="4741" vertical-scroll-proportion="-21.461538" vertical-offset="785" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
@@ -86,7 +75,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Style/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="18" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3417">
+            <state line="189" column="41" selection-start="3027" selection-end="3027" vertical-scroll-proportion="0.0" vertical-offset="2544" max-vertical-offset="3417">
               <folding />
             </state>
           </provider>
@@ -113,7 +102,16 @@
       <file leaf-file-name="detail.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="17" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1394">
+            <state line="37" column="72" selection-start="1175" selection-end="1219" vertical-scroll-proportion="-20.26923" vertical-offset="102" max-vertical-offset="1394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beheer.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/beheer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="23" selection-start="211" selection-end="211" vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="2941">
               <folding />
             </state>
           </provider>
@@ -148,20 +146,20 @@
         <option value="$PROJECT_DIR$/voegToeForm.php" />
         <option value="$PROJECT_DIR$/Js/disableSubmits.js" />
         <option value="$PROJECT_DIR$/Js/popup.js" />
-        <option value="$PROJECT_DIR$/Style/main.css" />
         <option value="$PROJECT_DIR$/DataModels/Product.php" />
         <option value="$PROJECT_DIR$/DB/CRUD/ProductDao.php" />
-        <option value="$PROJECT_DIR$/beheer.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Style/main.css" />
+        <option value="$PROJECT_DIR$/beheer.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1911" />
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1298" />
-    <option name="height" value="994" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -379,19 +377,24 @@
       <created>1400414986894</created>
       <updated>1400414986894</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Laatste kleine update">
+      <created>1401194859657</created>
+      <updated>1401194859657</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="-9" width="1298" height="994" extended-state="6" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18203124" sideWeight="0.6703663" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12135417" sideWeight="0.6703663" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -401,7 +404,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -440,7 +442,8 @@
     <MESSAGE value="beheerpage verwijderen werkt" />
     <MESSAGE value="beheerpage verwijderen werkt - some detail changes" />
     <MESSAGE value="voegToe+verwijder werkt beheer pagina" />
-    <option name="LAST_COMMIT_MESSAGE" value="voegToe+verwijder werkt beheer pagina" />
+    <MESSAGE value="Laatste kleine update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laatste kleine update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,13 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="17" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataModels/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="25" selection-start="128" selection-end="128" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="510" />
@@ -526,11 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beheer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="37" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2822" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DB/Connection/DatabaseFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="2" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="476">
@@ -538,16 +529,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Style/main.css">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="18" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3417">
+        <state line="79" column="52" selection-start="4741" selection-end="4741" vertical-scroll-proportion="-21.461538" vertical-offset="785" max-vertical-offset="1632">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="52" selection-start="4741" selection-end="4741" vertical-scroll-proportion="0.73907286" vertical-offset="785" max-vertical-offset="1632">
+        <state line="37" column="72" selection-start="1175" selection-end="1219" vertical-scroll-proportion="-20.26923" vertical-offset="102" max-vertical-offset="1394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="41" selection-start="3027" selection-end="3027" vertical-scroll-proportion="0.0" vertical-offset="2544" max-vertical-offset="3417">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beheer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="23" selection-start="211" selection-end="211" vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="2941">
           <folding />
         </state>
       </provider>

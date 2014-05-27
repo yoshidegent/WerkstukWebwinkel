@@ -3,7 +3,14 @@ require_once 'DB/CRUD/AdminDao.php';
 require_once 'DB/CRUD/ProductDao.php';
 require_once 'DataModels/Product.php';
 
-$admin = $_POST['naam'];
+if(isset($_POST['naam']))
+{
+    $admin = $_POST['naam'];
+}
+else
+{
+    $admin = "Anoniem";
+}
 $isAdmin;
 if(!AdminDao::isAdmin($admin))
 {
